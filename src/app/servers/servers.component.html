@@ -1,0 +1,10 @@
+
+<h1>Favourites </h1>
+<div *ngFor="let g of getFavourites" class="div-class">
+  <form>
+    <img  src="{{g.images.original.url}}" class="image-size" (click)="display(g.type,g.slug)">
+    
+  </form>
+
+</div>
+

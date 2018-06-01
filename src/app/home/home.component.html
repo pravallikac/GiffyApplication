@@ -1,0 +1,28 @@
+
+<div>
+<h1>
+    {{title}}
+  </h1>
+</div>
+<div>
+  <input name="search" #searchTerm>
+
+<button (click)="performSearch(searchTerm)">Search</button>
+
+
+</div>
+<br>
+<div>
+  <div *ngFor="let g of initialGiph| slice:0:10; let i=index" class="div-class">
+    <form *ngIf="i<11">
+      <img  src="{{g.images.original.url}}" class="image-size" (click)="display(g.type,g.slug)">
+      <button (click)="addGiffy(g)" class="btn btn-primary">Add Favourite</button>
+  
+    </form>
+
+  </div>
+</div>
+<div>
+<p>{{discription}}</p>
+
+</div>

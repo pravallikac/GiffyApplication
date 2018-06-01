@@ -5,6 +5,8 @@ import { Http, Response } from '@angular/http';
   // replaces previous Http service
 import { FormsModule } from '@angular/forms';
 import { EventEmitter } from 'protractor';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,7 @@ import { EventEmitter } from 'protractor';
 })
 export class HomeComponent implements OnInit {
   
+
   title = 'Giphy App!';
   //link = 'http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC=';
   link = 'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=';
@@ -42,7 +45,8 @@ export class HomeComponent implements OnInit {
     
     this.favouriteService.addFavouriteGiphs(g);
     alert("Favourite Giph has been Added");
-    console.log("component "+g);
+
+      console.log("component "+g);
   }
 
   performSearch(searchTerm: HTMLInputElement): void {
